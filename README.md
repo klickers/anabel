@@ -1,6 +1,8 @@
 # anabel
 A beautiful personal website template, built on TailwindCSS.
 
+![Image of Anabel page](https://github.com/klickers/anabel/blob/master/dist/anabel.PNG)
+
 ## Usage
 
 Download and extract the contents of this repository.  Inside the root directory, run:
