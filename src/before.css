@@ -46,7 +46,7 @@
  *
  */
 * {
-    @apply leading-loose;
+    @apply leading-loose text-justify;
     font-family: var(--font-body);
 }
 html {
@@ -61,13 +61,19 @@ h3,
 h4,
 h5,
 h6 {
-    @apply -ml-1;
+    @apply -ml-1 text-center;
     color: var(--color-display);
     font-family: var(--font-display), sans-serif;
 }
+h1 {
+    @apply text-3xl;
+}
+h2 {
+    @apply text-2xl;
+}
 p,
 a,
-code {
+img {
     @apply mb-4;
 }
 p {
@@ -79,6 +85,12 @@ a {
 }
 a:hover {
     @apply text-indigo-700;
+}
+hr {
+    @apply my-8;
+}
+img {
+    @apply w-full;
 }
 
 
@@ -134,11 +146,20 @@ main {
     .ab-content {
         @apply -mt-12 bg-white shadow-lg rounded-lg mb-24;
         padding: var(--padding-2y2x);
+        
+        & > section {
+            margin: 0 auto;
+            @apply w-11/12;
+        }
     }
 }
 @media (min-width: theme(screens.lg)) {
     main {
         @apply w-8/12;
+        
+        .ab-content > section {
+            @apply w-10/12;
+        }
     }
 }
 /**
@@ -149,13 +170,13 @@ main {
     margin: 0 auto;
 }
 .ab-person-details {
-    @apply text-center mb-10;
+    @apply mb-10;
 
     h1 {
         @apply mt-10 text-xl font-semibold;
     }
     p {
-        @apply text-sm;
+        @apply text-sm text-center;
     }
 }
 .ab-card {
@@ -163,12 +184,12 @@ main {
     @apply h-full w-10/12 mb-10 bg-white shadow-md rounded-lg;
     
     .ab-card-heading {
-        @apply rounded-t-lg text-lg;
+        @apply rounded-t-lg;
         padding: var(--padding-yx);
         background-color: var(--bg-card-heading);
         
         h1 {
-            @apply text-white uppercase;
+            @apply text-white uppercase text-justify text-lg;
             
             & > i {
                 @apply mr-2;
