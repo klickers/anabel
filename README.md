@@ -7,4 +7,6 @@ Download and extract the contents of this repository.  Inside the root directory
 npm install
 npm start
 ````
-You're all set to go!
+*Note:  A production build is also available at `dist/`.*
+
+That's it!  You're all set to go.
