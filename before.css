@@ -1,0 +1,297 @@
+@import "https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;600;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+
+/* Import tailwind base and components */
+@tailwind base;
+@tailwind components;
+
+
+:root {
+    
+    /* Display & Body */
+    --font-display: "Baloo Paaji 2";
+    --font-body: "Lato";
+    --color-display: theme(colors.gray.700);  /* color of display fonts */
+    --color-body: theme(colors.purple.100);  /* body background color */
+    
+    
+    /* Backgrounds */
+    --bg-hero: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23181221' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23261c3d' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%2335265a' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23453179' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23553c9a' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");  /* hero background color; from SVGBackgrounds.com */
+    
+    
+    /* Cards */
+    --bg-card-heading: theme(colors.purple.700);  /* background color of card 
+    
+    
+    /* Colors */
+    --color-p: theme(colors.gray.600);  /* paragraph color */
+        
+    --color-nav-text: theme(colors.white);  /* nav text color */
+    --color-nav-text-hover: theme(colors.white);  /* nav text color on hover */
+    
+    --color-footer: theme(colors.black);  /* footer background color */
+    --color-footer-text: theme(colors.white);  /* footer text color */
+    
+    
+    /* Padding */
+    --padding-yx: theme(padding.2) theme(padding.4);
+    --padding-y2x: theme(padding.2) theme(padding.6);
+    --padding-2y2x: theme(padding.8) theme(padding.6);  
+}
+
+
+/**
+ *
+ *  General Styles
+ *
+ */
+* {
+    @apply leading-loose;
+    font-family: var(--font-body);
+}
+html {
+    @apply h-full;
+}
+body {
+    background-color: var(--color-body);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply -ml-1;
+    color: var(--color-display);
+    font-family: var(--font-display), sans-serif;
+}
+p,
+a,
+code {
+    @apply mb-4;
+}
+p {
+    @apply tracking-wide leading-relaxed;
+    color: var(--color-p);
+}
+a {
+    @apply text-indigo-600 duration-500;
+}
+a:hover {
+    @apply text-indigo-700;
+}
+
+
+
+/**
+ *
+ *  Navigation
+ *
+ */
+nav {
+    @apply h-24 w-10/12;
+    margin: 0 auto;
+    padding: var(--padding-2y2x);
+    
+    .ab-nav-item {
+        @apply inline-block pr-3;
+        
+        & > a {
+            @apply font-semibold duration-500;
+            color: var(--color-nav-text);
+            
+            &:hover {
+                color: var(--color-nav-text-hover);
+            }
+        }
+    }
+    
+    .ab-nav-social {
+        @apply inline-block float-right;
+    }
+}
+@media (min-width: theme(screens.lg)) {
+    .nav {
+        @apply w-8/12;
+    }
+}
+
+
+
+/**
+ *
+ *  Main
+ *
+ */
+.ab-background {
+    @apply h-80 bg-fixed bg-cover -mt-24;
+    background-image: var(--bg-hero);
+}
+main {
+    margin: 0 auto;
+    @apply h-full w-10/12 -mt-32 mb-12;
+    
+    .ab-content {
+        @apply -mt-12 bg-white shadow-lg rounded-lg;
+        padding: var(--padding-2y2x);
+    }
+}
+@media (min-width: theme(screens.lg)) {
+    main {
+        @apply w-8/12;
+    }
+}
+/**
+ * Components 
+ */
+.ab-profile-pic {
+    @apply w-24 h-24 -mt-24 rounded-full shadow-xl object-cover;
+    margin: 0 auto;
+}
+.ab-person-details {
+    @apply text-center mb-10;
+
+    h1 {
+        @apply mt-10 text-xl font-semibold;
+    }
+    p {
+        @apply text-sm;
+    }
+}
+.ab-card {
+    margin: 0 auto;
+    @apply h-full w-10/12 mb-10 bg-white shadow-md rounded-lg;
+    
+    .ab-card-heading {
+        @apply rounded-t-lg text-lg;
+        padding: var(--padding-yx);
+        background-color: var(--bg-card-heading);
+        
+        h1 {
+            @apply text-white uppercase;
+            
+            & > i {
+                @apply mr-2;
+            }
+        }
+    }
+    
+    .ab-card-content {
+        @apply mt-2 w-full;
+        padding: var(--padding-y2x);
+        
+        .ab-card-cards {
+            @apply w-full;
+            
+            .ab-card-card {
+                @apply w-full mb-6 flex;
+                
+                .ab-card-cards-img {
+                    @apply flex-none mr-6;
+                    
+                    & > * {
+                        @apply w-16 h-16 rounded-full object-cover text-5xl text-gray-700 mt-2 text-center;
+                    }
+                }
+                
+                .ab-card-cards-content {
+                    @apply flex-1;
+                    
+                    .ab-card-cards-title {
+                        @apply font-semibold text-gray-700;
+                    }
+                    .ab-card-cards-time,
+                    .ab-card-cards-description,
+                    .ab-card-cards-place {
+                        @apply text-sm;
+                    }
+                    .ab-card-cards-time {
+                        @apply text-gray-700;
+                    }
+                    .ab-card-cards-description {
+                        @apply text-gray-600;
+                    }
+                    .ab-card-cards-place {
+                        @apply text-gray-600;
+                    }
+                }
+            }
+        }
+        
+        .ab-card-list {
+            @apply flex flex-wrap;
+            
+            & > p {
+                @apply capitalize w-full;
+            }
+        }
+    }
+}
+@media (min-width: theme(screens.sm)) {
+    .ab-card {
+        .ab-card-content {
+            .ab-card-list {
+                & > p {
+                    @apply w-1/2;
+                }
+            }
+        }
+    }
+}
+@media (min-width: theme(screens.md)) {
+    .ab-card {
+        .ab-card-content {
+            .ab-card-cards {
+                & > div {
+                    @apply w-1/2;
+                }
+            }
+            .ab-card-list {
+                & > p {
+                    @apply w-1/3;
+                }
+            }
+        }
+    }
+}
+@media (min-width: theme(screens.lg)) {
+    .ab-card {
+        @apply w-8/12;
+        
+        .ab-card-content {
+            .ab-card-cards {
+                & > div {
+                    @apply w-1/3;
+                }
+            }
+            .ab-card-list {
+                & > p {
+                    @apply w-1/4;
+                }
+            }
+        }
+    }
+}
+
+
+
+/**
+ *
+ *  Footer
+ *
+ */
+footer {
+    @apply bottom-0 h-full text-center;
+    background-color: var(--color-footer);
+    color: var(--color-footer-text);
+    padding: var(--padding-2y2x);
+}
+
+
+
+
+
+
+
+/* Utilities are not imported due to increasing the style.css file to over 1MB, but you are welcome to import them if you need. */
+/* @import "tailwindcss/utilities" */

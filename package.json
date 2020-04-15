@@ -1,0 +1,27 @@
+{
+  "name": "anabel",
+  "version": "1.0.0",
+  "description": "A personal website template.",
+  "main": "/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "npx tailwind build http://localhost:1234/before.cc49811a.css -o style.css && parcel index.html",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klickers/anabel.git"
+  },
+  "author": "Catherine Chen bluebirid228@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/klickers/anabel/issues"
+  },
+  "homepage": "https://github.com/klickers/anabel#readme",
+  "dependencies": {
+    "autoprefixer": "^9.7.6",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.1",
+    "tailwindcss": "^1.2.0"
+  }
+}
