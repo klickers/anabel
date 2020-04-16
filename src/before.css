@@ -302,10 +302,14 @@ main {
  *
  */
 footer {
-    @apply bottom-0 h-full text-center;
+    @apply bottom-0 h-full;
     background-color: var(--color-footer);
     color: var(--color-footer-text);
     padding: var(--padding-2y2x);
+    
+    & > * {
+        @apply text-center;
+    }
 }
 
 
