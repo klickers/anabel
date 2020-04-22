@@ -21,6 +21,10 @@ Download and extract the contents of this repository.  Inside the root directory
 That's it!  You're all set to go.
 
 
+### Routify
+You can also check out Anabel on Routify at [https://github.com/klickers/anabel-routify](https://github.com/klickers/anabel-routify).
+
+
 ## More Information
 
 To customize the styling, edit `src/before.css` and then compile:
